@@ -1,26 +1,15 @@
---- pyo3-0.20.0/Cargo.toml	1970-01-01T00:00:01+00:00
-+++ pyo3-0.20.0/Cargo.toml	2023-11-13T23:46:49.379610+00:00
-@@ -149,9 +149,6 @@
- version = "1.8.0"
- features = ["std"]
- 
--[dev-dependencies.send_wrapper]
--version = "0.6"
--
- [dev-dependencies.serde]
- version = "1.0"
- features = ["derive"]
-@@ -161,9 +158,6 @@
- 
- [dev-dependencies.trybuild]
+--- pyo3-0.20.1/Cargo.toml	1970-01-01T00:00:01+00:00
++++ pyo3-0.20.1/Cargo.toml	2023-12-31T22:04:59.479050+00:00
+@@ -168,7 +168,7 @@
  version = ">=1.0.70"
--
--[dev-dependencies.widestring]
+ 
+ [dev-dependencies.widestring]
 -version = "0.5.1"
++version = "1.0.2"
  
  [build-dependencies.pyo3-build-config]
- version = "0.20.0"
-@@ -217,7 +211,6 @@
+ version = "0.20.1"
+@@ -229,7 +229,6 @@
      "experimental-inspect",
      "rust_decimal",
  ]
