@@ -1,6 +1,6 @@
---- pyo3-0.20.1/Cargo.toml	1970-01-01T00:00:01+00:00
-+++ pyo3-0.20.1/Cargo.toml	2023-12-31T22:04:59.479050+00:00
-@@ -168,7 +168,7 @@
+--- pyo3-0.20.2/Cargo.toml	1970-01-01T00:00:01+00:00
++++ pyo3-0.20.2/Cargo.toml	2024-01-07T21:04:53.596095+00:00
+@@ -156,7 +156,7 @@
  version = ">=1.0.70"
  
  [dev-dependencies.widestring]
@@ -8,8 +8,8 @@
 +version = "1.0.2"
  
  [build-dependencies.pyo3-build-config]
- version = "0.20.1"
-@@ -229,7 +229,6 @@
+ version = "=0.20.2"
+@@ -217,7 +217,6 @@
      "experimental-inspect",
      "rust_decimal",
  ]
