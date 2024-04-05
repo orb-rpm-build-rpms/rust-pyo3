@@ -16,6 +16,8 @@ Source:         %{crates_source}
 # * bump widestring dev-dependency from 0.5 to 1.0
 # * drop MSVC- and MinGW-only features
 Patch:          pyo3-fix-metadata.diff
+# drop deny(warnings) from doctests to fix building with recent Rust
+Patch:          0001-drop-deny-warnings-from-doctests.patch
 
 BuildRequires:  cargo-rpm-macros >= 24
 
