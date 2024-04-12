@@ -1,0 +1,11 @@
+[package]
+cargo-toml-patch-comments = [
+    "drop MSVC- and MinGW-only features",
+]
+
+[scripts]
+prep.post = [
+    "# drop files that are not useful",
+    "rm -r emscripten/ newsfragments/",
+]
+
