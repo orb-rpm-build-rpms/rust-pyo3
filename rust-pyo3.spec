@@ -5,7 +5,7 @@
 %global crate pyo3
 
 Name:           rust-pyo3
-Version:        0.21.2
+Version:        0.22.0
 Release:        %autorelease
 Summary:        Bindings to Python interpreter
 
@@ -213,18 +213,6 @@ use the "experimental-async" feature of the "%{crate}" crate.
 %files       -n %{name}+experimental-async-devel
 %ghost %{crate_instdir}/Cargo.toml
 
-%package     -n %{name}+experimental-declarative-modules-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+experimental-declarative-modules-devel %{_description}
-
-This package contains library source intended for building other packages which
-use the "experimental-declarative-modules" feature of the "%{crate}" crate.
-
-%files       -n %{name}+experimental-declarative-modules-devel
-%ghost %{crate_instdir}/Cargo.toml
-
 %package     -n %{name}+experimental-inspect-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -391,6 +379,30 @@ This package contains library source intended for building other packages which
 use the "num-complex" feature of the "%{crate}" crate.
 
 %files       -n %{name}+num-complex-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+num-rational-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+num-rational-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "num-rational" feature of the "%{crate}" crate.
+
+%files       -n %{name}+num-rational-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+py-clone-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+py-clone-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "py-clone" feature of the "%{crate}" crate.
+
+%files       -n %{name}+py-clone-devel
 %ghost %{crate_instdir}/Cargo.toml
 
 %package     -n %{name}+pyo3-macros-devel
