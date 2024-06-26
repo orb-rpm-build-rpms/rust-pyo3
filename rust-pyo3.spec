@@ -15,6 +15,8 @@ Source:         %{crates_source}
 # Manually created patch for downstream crate metadata changes
 # * drop MSVC- and MinGW-only features
 Patch:          pyo3-fix-metadata.diff
+# https://github.com/PyO3/pyo3/issues/4290
+Patch:          0001-fix-regression-in-128-bit-number-conversions.patch
 
 BuildRequires:  cargo-rpm-macros >= 24
 
