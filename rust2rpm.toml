@@ -2,6 +2,15 @@
 cargo-toml-patch-comments = [
     "drop MSVC- and MinGW-only features",
 ]
+doc-files.exclude = [".towncrier.template.md"]
+
+[[package.extra-patches]]
+number = 2
+file = "0001-Make-unsafe-subinterpreter-support-available-via-cfg.patch"
+comments = ["""\
+make unsafe subinterpreter support available via cfg flag:
+https://bugzilla.redhat.com/show_bug.cgi?id=2298403""",
+]
 
 [scripts]
 prep.post = [
