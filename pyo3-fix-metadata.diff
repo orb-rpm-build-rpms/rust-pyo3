@@ -1,28 +1,10 @@
---- pyo3-0.22.6/Cargo.toml	1970-01-01T00:00:01+00:00
-+++ pyo3-0.22.6/Cargo.toml	2024-12-08T20:06:12.165353+00:00
-@@ -248,7 +248,7 @@
- default-features = false
- 
- [dependencies.chrono-tz]
--version = ">= 0.6, < 0.10"
-+version = ">= 0.6, < 0.11"
- optional = true
- default-features = false
- 
-@@ -328,7 +328,7 @@
- version = "0.4.25"
- 
- [dev-dependencies.chrono-tz]
--version = ">= 0.6, < 0.10"
-+version = ">= 0.6, < 0.11"
- 
- [dev-dependencies.futures]
- version = "0.3.28"
-@@ -423,7 +423,6 @@
+--- pyo3-0.23.3/Cargo.toml	1970-01-01T00:00:01+00:00
++++ pyo3-0.23.3/Cargo.toml	2024-12-09T13:39:23.386725+00:00
+@@ -428,7 +428,6 @@
      "serde",
      "smallvec",
  ]
 -generate-import-lib = ["pyo3-ffi/generate-import-lib"]
- gil-refs = ["pyo3-macros/gil-refs"]
  macros = [
      "pyo3-macros",
+     "indoc",
