@@ -1,5 +1,6 @@
 [package]
 cargo-toml-patch-comments = [
+    "relax chrono-tz dependency to allow building with 0.6..=0.10",
     "drop MSVC- and MinGW-only features",
 ]
 doc-files.exclude = [".towncrier.template.md"]
