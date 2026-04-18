@@ -1,6 +1,5 @@
 [package]
 cargo-toml-patch-comments = [
-    "relax chrono-tz dependency to allow building with 0.6..=0.10",
     "drop MSVC- and MinGW-only features",
 ]
 doc-files.exclude = [".towncrier.template.md"]
@@ -13,8 +12,16 @@ make unsafe subinterpreter support available via cfg flag:
 https://bugzilla.redhat.com/show_bug.cgi?id=2298403""",
 ]
 
+[requires]
+build = ["dos2unix"]
+
 [scripts]
 prep.post = [
+    "# convert files with CRLF line endings",
+    "dos2unix --keepdate src/call.rs",
+    "dos2unix --keepdate src/impl_/deprecated.rs",
+    "dos2unix --keepdate src/pyclass/guard.rs",
+    "dos2unix --keepdate tests/test_class_init.rs",
     "# drop files that are not useful",
     "rm -r emscripten/ newsfragments/",
 ]

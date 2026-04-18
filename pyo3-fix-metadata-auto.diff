@@ -1,7 +1,7 @@
---- pyo3-0.27.2/Cargo.toml	1970-01-01T00:00:01+00:00
-+++ pyo3-0.27.2/Cargo.toml	2025-12-29T20:33:30.363117+00:00
-@@ -536,9 +536,6 @@
- version = "=0.27.2"
+--- pyo3-0.28.3/Cargo.toml	2006-07-24T01:21:28+00:00
++++ pyo3-0.28.3/Cargo.toml	2026-04-18T13:00:36.494606+00:00
+@@ -529,9 +529,6 @@
+ version = "=0.28.3"
  features = ["resolve-config"]
  
 -[target.'cfg(not(target_has_atomic = "64"))'.dependencies.portable-atomic]
@@ -10,7 +10,7 @@
  [lints.clippy]
  checked_conversions = "warn"
  dbg_macro = "warn"
-@@ -569,3 +566,4 @@
+@@ -562,3 +559,4 @@
  [lints.rustdoc]
  bare_urls = "warn"
  broken_intra_doc_links = "warn"

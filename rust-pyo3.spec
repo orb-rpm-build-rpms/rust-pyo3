@@ -5,7 +5,7 @@
 %global crate pyo3
 
 Name:           rust-pyo3
-Version:        0.27.2
+Version:        0.28.3
 Release:        %autorelease
 Summary:        Bindings to Python interpreter
 
@@ -15,7 +15,6 @@ Source:         %{crates_source}
 # Automatically generated patch to strip dependencies and normalize metadata
 Patch:          pyo3-fix-metadata-auto.diff
 # Manually created patch for downstream crate metadata changes
-# * relax chrono-tz dependency to allow building with 0.6..=0.10
 # * drop MSVC- and MinGW-only features
 Patch:          pyo3-fix-metadata.diff
 # * make unsafe subinterpreter support available via cfg flag:
@@ -364,18 +363,6 @@ use the "indexmap" feature of the "%{crate}" crate.
 %files       -n %{name}+indexmap-devel
 %ghost %{crate_instdir}/Cargo.toml
 
-%package     -n %{name}+indoc-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+indoc-devel %{_description}
-
-This package contains library source intended for building other packages which
-use the "indoc" feature of the "%{crate}" crate.
-
-%files       -n %{name}+indoc-devel
-%ghost %{crate_instdir}/Cargo.toml
-
 %package     -n %{name}+inventory-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -580,18 +567,6 @@ use the "time" feature of the "%{crate}" crate.
 %files       -n %{name}+time-devel
 %ghost %{crate_instdir}/Cargo.toml
 
-%package     -n %{name}+unindent-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+unindent-devel %{_description}
-
-This package contains library source intended for building other packages which
-use the "unindent" feature of the "%{crate}" crate.
-
-%files       -n %{name}+unindent-devel
-%ghost %{crate_instdir}/Cargo.toml
-
 %package     -n %{name}+uuid-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -607,9 +582,13 @@ use the "uuid" feature of the "%{crate}" crate.
 %prep
 %autosetup -n %{crate}-%{version} -p1
 %cargo_prep
+# convert files with CRLF line endings
+dos2unix --keepdate src/call.rs
+dos2unix --keepdate src/impl_/deprecated.rs
+dos2unix --keepdate src/pyclass/guard.rs
+dos2unix --keepdate tests/test_class_init.rs
 # drop files that are not useful
 rm -r emscripten/ newsfragments/
-dos2unix --keepdate src/call.rs src/pyclass/guard.rs
 
 %generate_buildrequires
 # unit tests require optional dependencies
