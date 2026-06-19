@@ -1,6 +1,7 @@
 [package]
 cargo-toml-patch-comments = [
     "drop MSVC- and MinGW-only features",
+    "drop ui_test dev-dependency (UI tests are not included in published crates)",
 ]
 doc-files.exclude = [".towncrier.template.md"]
 
