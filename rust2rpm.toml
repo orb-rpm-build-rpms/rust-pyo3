@@ -24,6 +24,6 @@ prep.post = [
     "dos2unix --keepdate src/pyclass/guard.rs",
     "dos2unix --keepdate tests/test_class_init.rs",
     "# drop files that are not useful",
-    "rm -r emscripten/ newsfragments/",
+    "rm -r newsfragments/ wasm/",
 ]
 
